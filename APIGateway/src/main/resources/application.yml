@@ -1,0 +1,46 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: false   # we'll define explicit routes
+
+          routes:
+            - id: PRODUCT-SERVICE
+              uri: lb://PRODUCT-SERVICE
+              predicates:
+                - Path=/api/products/**     # external path clients call
+
+
+            - id: CATEGORY-SERVICE
+              uri: lb://CATEGORY-SERVICE
+              predicates:
+                - Path=/api/categories/**
+
+
+            - id: INVENTORY-SERVICE
+              uri: lb://INVENTORY-SERVICE
+              predicates:
+                - Path=/api/stock/**
+
+            - id: NOTIFICATION-SERVICE
+              uri: lb://NOTIFICATION-SERVICE
+              predicates:
+                - Path=/api/notifications/**
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+
