@@ -85,8 +85,8 @@ Before running the project, make sure you have:
       cd ../InventoryService
       ./mvnw spring-boot:run
       
-      # Notification Service
-      cd ../NotificationService
+      # Notification MicroService
+      cd ../NotificationMicroService
       ./mvnw spring-boot:run
       
       # API Gateway
