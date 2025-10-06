@@ -103,5 +103,5 @@ Before running the project, make sure you have:
 
 
       
-cd inventory-management-system
+
 
