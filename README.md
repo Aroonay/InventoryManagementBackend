@@ -3,7 +3,7 @@
 A **microservices-based Inventory Management System** built with **Spring Boot**.  
 The system consists of multiple services including Product, Category, Inventory, Notification, API Gateway, and Service Registry (Eureka).  
 
-This project demonstrates a real-world microservices architecture with **service discovery, RESTful APIs, Kafka messaging, and independent deployment**.
+This project demonstrates a real-world event driven microservices architecture with **service discovery, RESTful APIs, Kafka messaging, and independent deployment**.
 
 ---
 
